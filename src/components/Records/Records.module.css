@@ -1,0 +1,10 @@
+.sendbtn {
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px;
+  display: block;
+  font-size: 18px;
+  color: white;
+  background-color: #b71c1c;
+  cursor: pointer;
+}

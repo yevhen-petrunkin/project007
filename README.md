@@ -1,1 +1,3 @@
-# webpack-react-stater
+# project007
+
+Cover letter maker
