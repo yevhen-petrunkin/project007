@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import css from './Records.module.css';
 import progressStages from '../../sources/progressStages';
 
-const Records = ({ userAuth, onClick }) => {
+const Records = ({ userAuth }) => {
   const [records, setRecords] = useState([]);
 
   const handleSelectChange = (event, id) => {
@@ -32,11 +32,9 @@ const Records = ({ userAuth, onClick }) => {
   }, [db, userAuth]);
 
   return (
-    <div>
-      <button type="button" className={css.sendbtn} onClick={onClick}>
-        Save Application Info
-      </button>
-      <table>
+    <div className={css.tablebox}>
+      <h2>Applications Table</h2>
+      <table className={css.table}>
         <thead>
           <tr>
             <th>Date</th>
@@ -89,6 +87,7 @@ const Records = ({ userAuth, onClick }) => {
                   </td>
                   <td>
                     <button
+                      className={css.table__deletebtn}
                       type="button"
                       onClick={() => deleteRecord(userAuth, id)}
                     >

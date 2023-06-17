@@ -1,6 +1,5 @@
 import { onAuthStateChanged } from 'firebase/auth';
-import { doc, onSnapshot } from 'firebase/firestore';
-import { auth, db } from '../firebase';
+import { auth } from '../firebase';
 import { useState, useEffect } from 'react';
 import css from './App.module.css';
 import createRecord from '../db-fucntions/createRecord';
@@ -57,13 +56,18 @@ const App = () => {
 
   return (
     <>
-      <header>
-        <RegistrationForm />
-      </header>
-      <main>
+      {!userAuth && (
+        <header className={css.header}>
+          <RegistrationForm />
+        </header>
+      )}
+
+      <main className={css.main}>
+        <h1>Cover Letter Maker</h1>
+        <h2>Fill In The Form</h2>
         <Form processFormData={processFormData} />
-        <Result data={data} />
-        <Records userAuth={userAuth} onClick={handleSendBtnClick} />
+        <Result data={data} onClick={handleSendBtnClick} />
+        <Records userAuth={userAuth} />
       </main>
     </>
   );

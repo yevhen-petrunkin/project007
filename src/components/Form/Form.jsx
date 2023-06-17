@@ -81,7 +81,7 @@ const Form = ({ processFormData }) => {
       <div className={css.form}>
         <div className={css.form__box}>
           <div className={css.form__article}>
-            <h2>{chooseLanguage}</h2>
+            <h3>{chooseLanguage}</h3>
             <div className={css.form__innerbox}>
               <label>
                 {english}
@@ -107,10 +107,14 @@ const Form = ({ processFormData }) => {
           </div>
 
           <div className={css.form__article}>
-            <h2>{enterResource}</h2>
+            <h3>{enterResource}</h3>
             <label>
               {resource}
-              <input name="resource" list="resources" />
+              <input
+                className={css.form__input}
+                name="resource"
+                list="resources"
+              />
               <datalist id="resources">
                 {resources.map(source => (
                   <option key={source} value={source}>
@@ -122,27 +126,31 @@ const Form = ({ processFormData }) => {
           </div>
 
           <div className={css.form__article}>
-            <h2>{enterVacancyUrl}</h2>
+            <h3>{enterVacancyUrl}</h3>
             <label>
               {vacancyUrl}
-              <input type="url" name="vacancyUrl" />
+              <input
+                className={[css.form__input, css.url].join(' ')}
+                type="url"
+                name="vacancyUrl"
+              />
             </label>
           </div>
 
           <div className={css.form__article}>
-            <h2>{enterCompany}</h2>
+            <h3>{enterCompany}</h3>
             <label>
               {company}
-              <input type="text" name="company" />
+              <input className={css.form__input} type="text" name="company" />
             </label>
           </div>
 
           <div className={css.form__article}>
-            <h2>{enterAddresseeData}</h2>
+            <h3>{enterAddresseeData}</h3>
             <div className={css.form__innerbox}>
               <label>
                 {start}
-                <select name="courtesy">
+                <select className={css.form__input} name="courtesy">
                   {courtesy.map(call => (
                     <option key={call} value={call}>
                       {call}
@@ -152,7 +160,11 @@ const Form = ({ processFormData }) => {
               </label>
               <label>
                 {person}
-                <input name="addressee" list="addressee" />
+                <input
+                  className={css.form__input}
+                  name="addressee"
+                  list="addressee"
+                />
                 <datalist id="addressee">
                   {adressee.map(reference => (
                     <option key={reference} value={reference}>
@@ -165,10 +177,14 @@ const Form = ({ processFormData }) => {
           </div>
 
           <div className={css.form__article}>
-            <h2>{enterPosition}</h2>
+            <h3>{enterPosition}</h3>
             <label>
               {desiredPosition}
-              <input name="position" list="position" />
+              <input
+                className={css.form__input}
+                name="position"
+                list="position"
+              />
               <datalist id="position">
                 {position.map(job => (
                   <option key={job} value={job}>
@@ -180,7 +196,7 @@ const Form = ({ processFormData }) => {
           </div>
 
           <div className={css.form__article}>
-            <h2>{chooseProjects}</h2>
+            <h3>{chooseProjects}</h3>
             <div className={css.form__listbox}>
               {projects.map(project => (
                 <label key={project} className={css.form__listlabel}>
@@ -194,7 +210,7 @@ const Form = ({ processFormData }) => {
 
         <div className={css.form__box}>
           <div className={css.form__article}>
-            <h2>{chooseTechnologies}</h2>
+            <h3>{chooseTechnologies}</h3>
             <div className={css.form__listbox}>
               {technologies.map(tech => (
                 <label key={tech} className={css.form__listlabel}>
@@ -208,7 +224,7 @@ const Form = ({ processFormData }) => {
       </div>
 
       <div className={css.form__reasonbox}>
-        <h2>{enterReasons}</h2>
+        <h3>{enterReasons}</h3>
         <label>
           {reason}
           <textarea className={css.form__reasons} name="reasons" />

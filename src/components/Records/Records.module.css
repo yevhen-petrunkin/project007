@@ -1,10 +1,40 @@
-.sendbtn {
-  margin: 0 auto;
-  margin-top: 20px;
-  padding: 10px;
-  display: block;
-  font-size: 18px;
-  color: white;
+.table {
+  padding: 20px;
+  width: 100%;
+  table-layout: auto;
+  color: #1c1a27;
+  background-color: #f9f871;
+
+  & th,
+  & td {
+    padding: 10px 0;
+    text-align: start;
+  }
+
+  & select {
+    padding: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  & a {
+    padding: 20px 10px;
+    color: #3f51f5;
+  }
+}
+
+.table__deletebtn {
+  padding: 10px 10px;
+  font-size: 16px;
+  letter-spacing: 0.8px;
   background-color: #b71c1c;
+  color: #fbf7ff;
+  border: none;
   cursor: pointer;
+  transition: background-color 400ms ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: #312d4a;
+  }
 }

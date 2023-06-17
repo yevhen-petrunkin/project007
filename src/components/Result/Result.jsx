@@ -3,7 +3,7 @@ import css from './Result.module.css';
 import englishTemplateString from '../../sources/englishTemplate.js';
 import ukrainianTemplateString from '../../sources/ukrainianTemplate.js';
 
-const Result = ({ data }) => {
+const Result = ({ data, onClick }) => {
   const [formData, setFormData] = useState(null);
 
   useEffect(() => {
@@ -89,6 +89,9 @@ const Result = ({ data }) => {
     <div className={css.resultbox}>
       <h2>{title}</h2>
       <textarea className={css.resultbox__result} value={dataString} readOnly />
+      <button type="button" className={css.sendbtn} onClick={onClick}>
+        Save Application Info
+      </button>
     </div>
   );
 };

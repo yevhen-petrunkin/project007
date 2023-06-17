@@ -18,10 +18,11 @@ const RegistrationForm = () => {
   };
 
   return (
-    <form onSubmit={handleRegister}>
+    <form className={css.registrationForm} onSubmit={handleRegister}>
       <label>
         Email:
         <input
+          className={css.registrationForm__input}
           type="email"
           value={email}
           placeholder="Enter your email"
@@ -33,6 +34,7 @@ const RegistrationForm = () => {
       <label>
         Password:
         <input
+          className={css.registrationForm__input}
           type="password"
           value={password}
           placeholder="Enter your password"
@@ -41,7 +43,9 @@ const RegistrationForm = () => {
           onChange={e => setPassword(e.target.value.trim())}
         />
       </label>
-      <button type="submit">Register</button>
+      <button className={css.registrationForm__submitbtn} type="submit">
+        Register
+      </button>
     </form>
   );
 };

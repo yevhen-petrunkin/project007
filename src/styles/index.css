@@ -9,15 +9,14 @@ img {
 }
 
 body {
-  padding: 20px;
-
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #212121;
-  background-color: #b2dfdb;
+  color: #fbf7ff;
+  background-color: #3f51f5;
+  letter-spacing: 0.8px;
 }
 
 code {

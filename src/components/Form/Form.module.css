@@ -4,13 +4,14 @@
 }
 
 .form__box {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
   width: 50%;
+  color: #1c1a27;
+  background-color: #f9f871;
 }
 
 .form__article {
-  & h2 {
+  & h3 {
     margin-bottom: 10px;
     font-size: 20px;
   }
@@ -33,7 +34,7 @@
 .form__listbox {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 }
 
 .form__listlabel {
@@ -45,8 +46,24 @@
   }
 }
 
+.form__input {
+  padding: 5px;
+  display: inline-block;
+  font-size: 16px;
+  outline: none;
+}
+
+.url {
+  width: 70%;
+}
+
 .form__reasonbox {
-  & h2 {
+  margin-top: 20px;
+  padding: 20px;
+  color: #1c1a27;
+  background-color: #f9f871;
+
+  & h3 {
     margin-bottom: 10px;
     font-size: 20px;
   }
@@ -64,13 +81,25 @@
   display: block;
   resize: vertical;
   font-size: 18px;
+  outline: none;
 }
 
 .form__submitbtn {
   margin: 0 auto;
-  margin-top: 10px;
-  padding: 10px;
+  margin-top: 20px;
+  padding: 10px 20px;
   display: block;
-  font-size: 18px;
+  font-size: 24px;
+  letter-spacing: 0.8px;
+  background-color: #312d4a;
+  color: #fbf7ff;
+  border: none;
   cursor: pointer;
+  transition: background-color 400ms ease-out, color 400ms ease-out;
+
+  &:hover,
+  &:focus {
+    color: #312d4a;
+    background-color: #f9f871;
+  }
 }
