@@ -1,7 +1,7 @@
 {
-  "name": "webpack-react-starter",
+  "name": "project007",
   "version": "1.0.0",
-  "homepage": "https://yevhen-petrunkin.github.io/webpack-react-starter/",
+  "homepage": "https://yevhen-petrunkin.github.io/project007/",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "predeploy": "npm run build"
   },
   "keywords": [],
-  "author": "Skjold <mmm@mail.com>",
+  "author": "Yevhen Petrunkin <novamovaxxi@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@babel/preset-env": "^7.20.2",

@@ -72,10 +72,13 @@ const Result = ({ data, onClick }) => {
       array = [...arr];
     }
 
+    const andConj =
+      formData.language.toLowerCase() === 'english' ? 'and' : 'та';
+
     if (array.length > 1) {
       const lastElement = array[array.length - 1];
       const otherElements = array.slice(0, array.length - 1).join(', ');
-      finalString = `${otherElements} and ${lastElement}`;
+      finalString = `${otherElements} ${andConj} ${lastElement}`;
     } else {
       finalString = array[0];
     }
