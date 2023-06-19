@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fbf7ff;
+  background-color: #3f51f5;
+  letter-spacing: 0.8px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.hWNQ4YvYqrG0CQyEAOga {
+  padding: 20px;
+}
+
+.lWlEeAZfcwlFQ0Kax6ms {
+  padding: 20px 40px;
+
+  & h1 {
+    text-align: center;
+    font-size: 32px;
+  }
+
+  & h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 28px;
+  }
+}
+
+.ddkea_o8H1dd3kEJ5bgC {
+  display: flex;
+  gap: 20px;
+}
+
+.T6RJJlRBF8zAnojRV3YH {
+  padding: 20px;
+  width: 50%;
+  color: #1c1a27;
+  background-color: #f9f871;
+}
+
+.PN2qwpML3M6uk6LmYfWu {
+  & h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  & label {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &:not(&:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.JrwzhWRk4j4TOuU_8FLG {
+  display: flex;
+  gap: 20px;
+}
+
+.mjnabgxgWCkrqqehzbGS {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gpTT6MyYpJ6zQoF5AdXp {
+  flex-basis: calc(30%);
+
+  & input {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
+.gZSiThCPrDDmG_3YFrJv {
+  padding: 5px;
+  display: inline-block;
+  font-size: 16px;
+  outline: none;
+}
+
+.IUT9TUXMAAwH5NVJwMKI {
+  width: 70%;
+}
+
+.PMTgsKKrsGji00ZE19Ca {
+  margin-top: 20px;
+  padding: 20px;
+  color: #1c1a27;
+  background-color: #f9f871;
+
+  & h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  & label {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.LffNLtouWrVClYymUHkk {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  display: block;
+  resize: vertical;
+  font-size: 18px;
+  outline: none;
+}
+
+.J_Ea51QFACHDIV9f9qh5 {
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px 20px;
+  display: block;
+  font-size: 24px;
+  letter-spacing: 0.8px;
+  background-color: #312d4a;
+  color: #fbf7ff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 400ms ease-out, color 400ms ease-out;
+
+  &:hover,
+  &:focus {
+    color: #312d4a;
+    background-color: #f9f871;
+  }
+}
+
+.fiwmHClZqO2cbkOs_MM3 {
+  padding: 20px 0;
+  & h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 28px;
+  }
+}
+
+.dT29In_FoHT3cAr3wX4X {
+  width: 100%;
+  height: 450px;
+  display: block;
+  resize: vertical;
+  font-size: 18px;
+  outline: none;
+}
+
+.mXIQ1bZmz8yAz098Tzwu {
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px 20px;
+  display: block;
+  font-size: 24px;
+  letter-spacing: 0.8px;
+  background-color: #b71c1c;
+  color: #fbf7ff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 400ms ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: #312d4a;
+  }
+}
+
+.KBNAbnbkhVbufB1DZhWe {
+  padding: 20px;
+  width: 100%;
+  table-layout: auto;
+  color: #1c1a27;
+  background-color: #f9f871;
+
+  & th,
+  & td {
+    padding: 10px 0;
+    text-align: start;
+  }
+
+  & select {
+    padding: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  & a {
+    padding: 20px 10px;
+    color: #3f51f5;
+  }
+}
+
+.YHCIeZ6ZIfvM8_gK2Ot1 {
+  padding: 10px 10px;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  background-color: #b71c1c;
+  color: #fbf7ff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 400ms ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: #312d4a;
+  }
+}
+
+.kvTdpwf0bkf9vBqU57O4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  & label {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+._y3K_OyR5eQPwfJdMlfg {
+  margin-left: 10px;
+  padding: 5px;
+  display: inline-block;
+  font-size: 16px;
+  outline: none;
+}
+
+.So7P4wUim2acawr0bGNK {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #312d4a;
+  color: #fbf7ff;
+  border: none;
+  transition: background-color 400ms ease-out, color 400ms ease-out;
+
+  &:hover,
+  &:focus {
+    color: #312d4a;
+    background-color: #f9f871;
+  }
+}
+
+
+/*# sourceMappingURL=main.5f95a6ce47fafeb9a153.css.map*/
