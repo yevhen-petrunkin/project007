@@ -5,9 +5,14 @@ import updateRecord from '../../db-fucntions/updateRecord';
 import { useState, useEffect } from 'react';
 import css from './Records.module.css';
 import progressStages from '../../sources/progressStages';
+import sortRecordsByCategory from '../../services/sortRecordsByCategory';
 
 const Records = ({ userAuth }) => {
-  const [records, setRecords] = useState([]);
+  const [category, setCategory] = useState('date');
+  const [records, setRecords] = useState({
+    sortedRecords: [],
+    incomingRecords: [],
+  });
 
   const handleSelectChange = (event, id) => {
     updateRecord(userAuth, id, { progress: event.target.value });
@@ -22,8 +27,10 @@ const Records = ({ userAuth }) => {
           return doc.data();
         });
         if (list) {
-          console.log(list);
-          setRecords(list);
+          const sortedRecords = sortRecordsByCategory(category, list);
+          setRecords(prev => {
+            return { ...prev, sortedRecords, incomingRecords: list };
+          });
         }
       });
 
@@ -31,23 +38,69 @@ const Records = ({ userAuth }) => {
     }
   }, [db, userAuth]);
 
+  useEffect(() => {
+    const sortedRecords = sortRecordsByCategory(
+      category,
+      records.incomingRecords
+    );
+
+    setRecords(prev => {
+      return {
+        ...prev,
+        sortedRecords,
+      };
+    });
+  }, [category]);
+
   return (
     <div className={css.tablebox}>
       <h2>Applications Table</h2>
       <table className={css.table}>
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Resource</th>
-            <th>Company</th>
-            <th>Position</th>
+            <th>
+              <button
+                className={css.table__btn}
+                type="button"
+                onClick={() => setCategory('date')}
+              >
+                Date
+              </button>
+            </th>
+            <th>
+              <button
+                className={css.table__btn}
+                type="button"
+                onClick={() => setCategory('resource')}
+              >
+                Resource
+              </button>
+            </th>
+            <th>
+              <button
+                className={css.table__btn}
+                type="button"
+                onClick={() => setCategory('company')}
+              >
+                Company
+              </button>
+            </th>
+            <th>
+              <button
+                className={css.table__btn}
+                type="button"
+                onClick={() => setCategory('position')}
+              >
+                Position
+              </button>
+            </th>
             <th>Progress</th>
             <th>URL</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          {records.map(
+          {records.sortedRecords.map(
             ({
               id,
               position,
@@ -87,7 +140,7 @@ const Records = ({ userAuth }) => {
                   </td>
                   <td>
                     <button
-                      className={css.table__deletebtn}
+                      className={css.table__btn_delete}
                       type="button"
                       onClick={() => deleteRecord(userAuth, id)}
                     >

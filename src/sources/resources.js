@@ -1,6 +1,7 @@
 const resources = [
   'Djinni',
   'Work.ua',
+  'robota.ua',
   'DOU',
   'LinkedIn',
   'BazaIt',

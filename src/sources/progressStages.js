@@ -1,6 +1,8 @@
 const progressStages = [
   'Waiting',
+  'Seen',
   'Called',
+  'Contacted',
   'Got test assignment',
   'Submitted test, waiting for answer',
   'Test approved, waiting further',

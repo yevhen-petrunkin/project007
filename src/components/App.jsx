@@ -43,10 +43,10 @@ const App = () => {
 
     const dataToSend = {
       id: date.getTime().toString(),
-      position,
-      resource,
-      vacancyUrl,
-      company,
+      position: position.trim(),
+      resource: resource.trim(),
+      vacancyUrl: vacancyUrl.trim(),
+      company: company.trim(),
       date: formattedDate,
       progress: 'waiting',
     };

@@ -23,7 +23,24 @@
   }
 }
 
-.table__deletebtn {
+.table__btn {
+  padding: 10px 10px;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  text-decoration: underline;
+  background-color: transparent;
+  color: #3f51f5;
+  border: none;
+  cursor: pointer;
+  transition: color 400ms ease-out;
+
+  &:hover,
+  &:focus {
+    color: #312d4a;
+  }
+}
+
+.table__btn_delete {
   padding: 10px 10px;
   font-size: 16px;
   letter-spacing: 0.8px;
