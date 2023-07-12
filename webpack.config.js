@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 
 const HTMLWebpackPlugin = require('html-webpack-plugin');
@@ -38,6 +39,23 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
+    }),
+    new webpack.DefinePlugin({
+      'process.env.FIREBASE_API_KEY': JSON.stringify(
+        'AIzaSyAql4LCfbnzfp_bBZqv-f_5Km2RgJucBys'
+      ),
+      'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(
+        'cover-letter-maker.firebaseapp.com'
+      ),
+      'process.env.FIREBASE_PROJECT_ID': JSON.stringify('cover-letter-maker'),
+      'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(
+        'cover-letter-maker.appspot.com'
+      ),
+      'process.env.FIREBASE_MESSAGING_SENDER_ID':
+        JSON.stringify('261830690164'),
+      'process.env.FIREBASE_APP_ID': JSON.stringify(
+        '1:261830690164:web:c2b2f3feb6180a836a5821'
+      ),
     }),
   ],
 
