@@ -27,6 +27,7 @@ export const englishData = {
     enterPosition: 'Enter Desired Position',
     chooseProjects: 'Choose Maximum Three Projects',
     chooseTechnologies: 'Choose Maximum Four Technologies',
+    chooseExtraSkills: 'Choose a Couple of Extra Skills',
     enterReasons: 'State Your Reasons',
   },
   labels: {
@@ -73,6 +74,7 @@ export const ukrainianData = {
     enterPosition: 'Вкажи бажану посаду',
     chooseProjects: 'Обери максимум три проекти',
     chooseTechnologies: 'Обери максимум чотири технології',
+    chooseExtraSkills: 'Обери пару додаткових навичок',
     enterReasons: 'Вкажи свої причини',
   },
   labels: {

@@ -1,30 +1,48 @@
 import css from './Form.module.css';
 import { useState, useRef } from 'react';
 import { englishData, ukrainianData } from '../../sources/templateData';
+import {
+  extraSkillsEnglish,
+  extraSkillsUkrainian,
+} from '../../sources/extraSkills';
 
 const Form = ({ processFormData }) => {
   const [language, setLanguage] = useState('english');
   const [list, setList] = useState(englishData);
+  const [skillList, setSkillList] = useState(extraSkillsEnglish);
   const formRef = useRef(null);
 
   const handleLanguageChange = event => {
     setLanguage(event.target.value);
     setList(getList(event.target.value));
+    setSkillList(getSkillList(event.target.value));
   };
 
   const handleSubmit = event => {
     event.preventDefault();
+    const arr = [];
     const formData = new FormData(formRef.current);
+    formData.forEach((value, name) => {
+      let newVal = null;
+      if (name.toLowerCase() === 'extraSkills'.toLowerCase()) {
+        newVal = JSON.parse(value);
+      } else {
+        newVal = value;
+      }
+      arr.push([name, newVal]);
+    });
+    console.log(arr);
+
     const data = {};
 
-    for (const [name, value] of formData.entries()) {
+    for (const [name, newVal] of arr) {
       if (data[name]) {
         if (!Array.isArray(data[name])) {
           data[name] = [data[name]];
         }
-        data[name].push(value);
+        data[name].push(newVal);
       } else {
-        data[name] = value;
+        data[name] = newVal;
       }
     }
 
@@ -39,6 +57,10 @@ const Form = ({ processFormData }) => {
 
   function getList(lang) {
     return lang === 'english' ? englishData : ukrainianData;
+  }
+
+  function getSkillList(lang) {
+    return lang === 'english' ? extraSkillsEnglish : extraSkillsUkrainian;
   }
 
   const {
@@ -73,6 +95,7 @@ const Form = ({ processFormData }) => {
     enterPosition,
     chooseProjects,
     chooseTechnologies,
+    chooseExtraSkills,
     enterReasons,
   } = titles;
 
@@ -202,6 +225,22 @@ const Form = ({ processFormData }) => {
                 <label key={project} className={css.form__listlabel}>
                   {project}
                   <input type="checkbox" name="projects" value={project} />
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div className={css.form__article}>
+            <h3>{chooseExtraSkills}</h3>
+            <div className={css.form__listbox}>
+              {skillList.map(skill => (
+                <label key={skill.id} className={css.form__listlabel}>
+                  {skill.label}
+                  <input
+                    type="checkbox"
+                    name="extraSkills"
+                    value={JSON.stringify(skill)}
+                  />
                 </label>
               ))}
             </div>

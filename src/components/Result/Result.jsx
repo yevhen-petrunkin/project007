@@ -22,10 +22,9 @@ const Result = ({ data, onClick }) => {
         language,
         position,
         projects,
+        extraSkills,
         reasons,
-
         technologies,
-
         company,
       } = incomingData;
 
@@ -36,6 +35,7 @@ const Result = ({ data, onClick }) => {
 
       const techString = getStringFromArray(technologies);
       const projString = getStringFromArray(projects);
+      const skillString = getStringFromArray(extraSkills);
 
       const createTemplate = new Function(
         'courtesy',
@@ -44,6 +44,7 @@ const Result = ({ data, onClick }) => {
         'companyName',
         'techString',
         'projString',
+        'skillString',
         'reasons',
 
         'return ' + template
@@ -56,6 +57,7 @@ const Result = ({ data, onClick }) => {
         company,
         techString,
         projString,
+        skillString,
         reasons
       );
     }
@@ -72,15 +74,58 @@ const Result = ({ data, onClick }) => {
       array = [...arr];
     }
 
-    const andConj =
-      formData.language.toLowerCase() === 'english' ? 'and' : 'та';
+    const isEnglish = formData.language.toLowerCase() === 'english';
+
+    const andConj = isEnglish ? 'and' : 'та';
 
     if (array.length > 1) {
       const lastElement = array[array.length - 1];
-      const otherElements = array.slice(0, array.length - 1).join(', ');
-      finalString = `${otherElements} ${andConj} ${lastElement}`;
+      const firstElement = array[0];
+
+      if (typeof lastElement === 'object') {
+        let firstString = '';
+
+        if (isEnglish) {
+          firstString = 'my ' + firstElement.value.skill;
+        } else {
+          firstString = firstElement.value.myWord + firstElement.value.skill;
+        }
+
+        const lastString = lastElement.value.skill;
+
+        const otherElements = array.slice(1, array.length - 1);
+
+        const formattedElements = [];
+
+        otherElements.forEach(elm => formattedElements.push(elm.value.skill));
+
+        const middleString = formattedElements.join(', ');
+
+        console.log('First word: ', firstString);
+        console.log('Middle string: ', middleString);
+        console.log('Last word: ', lastString);
+
+        finalString = `${middleString ? firstString + ',' : firstString} ${
+          middleString && middleString
+        } ${andConj} ${lastString}`;
+      } else {
+        const otherElements = array.slice(0, array.length - 1).join(', ');
+        finalString = `${otherElements} ${andConj} ${lastElement}`;
+      }
     } else {
-      finalString = array[0];
+      if (typeof array[0] === 'object') {
+        let newString = '';
+
+        if (isEnglish) {
+          newString = 'my' + array[0].value.skill;
+        } else {
+          newString = array[0].value.myWord + array[0].value.skill;
+        }
+
+        finalString = newString;
+      } else {
+        finalString = array[0];
+      }
     }
 
     return finalString;
