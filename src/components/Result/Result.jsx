@@ -35,7 +35,7 @@ const Result = ({ data, onClick }) => {
 
       const techString = getStringFromArray(technologies);
       const projString = getStringFromArray(projects);
-      const skillString = getStringFromArray(extraSkills);
+      const skillString = getStringFromArray(extraSkills); // Check data that are passed into this function instance. When chosen only one skill data is not iterable.
 
       const createTemplate = new Function(
         'courtesy',

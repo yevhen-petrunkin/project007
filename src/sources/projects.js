@@ -1,4 +1,5 @@
 const projects = [
+  'Windy',
   'Promptadise',
   'V7Pro Bot',
   'Cinemagot',
