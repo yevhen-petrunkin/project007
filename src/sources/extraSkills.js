@@ -22,6 +22,39 @@ export const extraSkillsEnglish = [
     label: 'Scrum/Agile',
     value: { skill: 'awareness of Scrum and Agile methodologies' },
   },
+
+  {
+    id: 5,
+    label: 'OOP',
+    value: { skill: 'understanding of OOP' },
+  },
+
+  {
+    id: 6,
+    label: 'CSS frameworks',
+    value: {
+      skill:
+        'ability to apply various CSS frameworks like Tailwind, MUI and Bootstrap',
+    },
+  },
+
+  {
+    id: 7,
+    label: 'Git',
+    value: {
+      skill:
+        'experience in using Git system both on individual and team projects',
+    },
+  },
+
+  {
+    id: 8,
+    label: 'Webpack/Gulp',
+    value: {
+      skill:
+        'understanding and experience in building projects with bundlers like Webpack and Gulp',
+    },
+  },
 ];
 
 export const extraSkillsUkrainian = [
@@ -51,5 +84,41 @@ export const extraSkillsUkrainian = [
     id: 4,
     label: 'Scrum/Agile',
     value: { myWord: 'моє ', skill: 'знання методологій Scrum та Agile' },
+  },
+
+  {
+    id: 5,
+    label: 'ООП',
+    value: { myWord: 'моє ', skill: 'розуміння принципів ООП' },
+  },
+
+  {
+    id: 6,
+    label: 'CSS фреймворки',
+    value: {
+      myWord: 'моє ',
+      skill:
+        'вміння використовувати різноманітні CSS фреймворки, такі як Tailwind, MUI та Bootstrap',
+    },
+  },
+
+  {
+    id: 7,
+    label: 'Git',
+    value: {
+      myWord: 'мій ',
+      skill:
+        'досвід користування системою Git як в індивідуальних, так і в командних проектах',
+    },
+  },
+
+  {
+    id: 8,
+    label: 'Webpack/Gulp',
+    value: {
+      myWord: 'моє ',
+      skill:
+        'розуміння роботи й досвід збірки проектів за допомогою бандлерів типу Webpack і Gulp',
+    },
   },
 ];

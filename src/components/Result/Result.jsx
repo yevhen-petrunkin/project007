@@ -68,7 +68,7 @@ const Result = ({ data, onClick }) => {
   function getStringFromArray(arr) {
     let finalString = '';
     let array = [];
-    if (typeof arr === 'string') {
+    if (!Array.isArray(arr)) {
       array = [arr];
     } else {
       array = [...arr];
@@ -117,7 +117,7 @@ const Result = ({ data, onClick }) => {
         let newString = '';
 
         if (isEnglish) {
-          newString = 'my' + array[0].value.skill;
+          newString = 'my ' + array[0].value.skill;
         } else {
           newString = array[0].value.myWord + array[0].value.skill;
         }
