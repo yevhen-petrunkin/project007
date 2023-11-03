@@ -1,4 +1,8 @@
 const projects = [
+  'Mafia Odesa Club',
+  'Phlebologist Clinic',
+  '13 Candle Bar',
+  'Carp Travel',
   'Windy',
   'Promptadise',
   'V7Pro Bot',
