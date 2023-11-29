@@ -92,6 +92,24 @@ code {
   }
 }
 
+.R4FtQLTwPwup8sz5VVM1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.m3QRt_KU9vC0YBi9Iajl {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  & input {
+    display: block;
+    margin-left: 10px;
+  }
+}
+
 .gZSiThCPrDDmG_3YFrJv {
   padding: 5px;
   display: inline-block;
@@ -147,6 +165,22 @@ code {
   &:focus {
     color: #312d4a;
     background-color: #f9f871;
+  }
+}
+
+.vp2akSLdcd8kMbSyzrnN {
+  padding: 10px 10px;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  background-color: #b71c1c;
+  color: #fbf7ff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 400ms ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: #312d4a;
   }
 }
 
@@ -283,4 +317,4 @@ code {
 }
 
 
-/*# sourceMappingURL=main.368ab1bde3428a83671a.css.map*/
+/*# sourceMappingURL=main.217926f172f2fec51271.css.map*/
