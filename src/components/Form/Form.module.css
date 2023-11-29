@@ -46,6 +46,24 @@
   }
 }
 
+.form__reasonlist {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form__reasonlabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  & input {
+    display: block;
+    margin-left: 10px;
+  }
+}
+
 .form__input {
   padding: 5px;
   display: inline-block;

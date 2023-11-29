@@ -4,6 +4,7 @@ const resources = [
   'robota.ua',
   'DOU',
   'LinkedIn',
+  'Jooble',
   'BazaIt',
   'Skyworker',
 ];

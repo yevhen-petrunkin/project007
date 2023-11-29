@@ -23,8 +23,9 @@ const Result = ({ data, onClick }) => {
         position,
         projects,
         extraSkills,
-        reasons,
         technologies,
+        checkReasons,
+        reasons,
         company,
       } = incomingData;
 
@@ -33,9 +34,20 @@ const Result = ({ data, onClick }) => {
           ? englishTemplateString
           : ukrainianTemplateString;
 
+      let newReasons = [];
+
+      if (checkReasons && Array.isArray(checkReasons)) {
+        newReasons = [...checkReasons];
+      }
+
+      if (reasons && !newReasons.includes(reasons)) {
+        newReasons.push(reasons);
+      }
+
       const techString = getStringFromArray(technologies);
       const projString = getStringFromArray(projects);
       const skillString = getStringFromArray(extraSkills); // Check data that are passed into this function instance. When chosen only one skill data is not iterable.
+      const reasonString = getStringFromArray(newReasons);
 
       const createTemplate = new Function(
         'courtesy',
@@ -45,7 +57,7 @@ const Result = ({ data, onClick }) => {
         'techString',
         'projString',
         'skillString',
-        'reasons',
+        'reasonString',
 
         'return ' + template
       );
@@ -58,7 +70,7 @@ const Result = ({ data, onClick }) => {
         techString,
         projString,
         skillString,
-        reasons
+        reasonString
       );
     }
 

@@ -1,0 +1,15 @@
+.btn_delete {
+  padding: 10px 10px;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  background-color: #b71c1c;
+  color: #fbf7ff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 400ms ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: #312d4a;
+  }
+}

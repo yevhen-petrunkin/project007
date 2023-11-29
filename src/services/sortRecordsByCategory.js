@@ -1,6 +1,5 @@
 const sortRecordsByCategory = (category, records) => {
   if (!records.length || category.toLowerCase() === 'date') {
-    console.log('date');
     return records;
   }
 

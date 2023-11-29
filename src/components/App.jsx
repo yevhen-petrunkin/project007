@@ -3,6 +3,7 @@ import { auth } from '../firebase';
 import { useState, useEffect } from 'react';
 import css from './App.module.css';
 import createRecord from '../db-fucntions/createRecord';
+import addNewReason from '../db-fucntions/addNewReason';
 import Form from './Form/Form';
 import Result from './Result/Result';
 import Records from './Records/Records';
@@ -34,7 +35,7 @@ const App = () => {
       return;
     }
 
-    const { position, resource, vacancyUrl, company } = data;
+    const { position, resource, vacancyUrl, company, reasons, language } = data;
 
     const date = new Date();
     const utcString = date.toUTCString();
@@ -52,6 +53,9 @@ const App = () => {
     };
 
     createRecord(userAuth, dataToSend.id, dataToSend);
+
+    const collectionName = language === 'english' ? 'reasonsEn' : 'reasonsUk';
+    addNewReason(userAuth, collectionName, reasons);
   };
 
   return (
@@ -65,7 +69,7 @@ const App = () => {
       <main className={css.main}>
         <h1>Cover Letter Maker</h1>
         <h2>Fill In The Form</h2>
-        <Form processFormData={processFormData} />
+        <Form processFormData={processFormData} userAuth={userAuth} />
         <Result data={data} onClick={handleSendBtnClick} />
         <Records userAuth={userAuth} />
       </main>

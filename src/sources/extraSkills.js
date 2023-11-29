@@ -2,7 +2,7 @@ export const extraSkillsEnglish = [
   {
     id: 1,
     label: 'English competence',
-    value: { skill: 'advanced English language competence' },
+    value: { skill: 'advanced English competence' },
   },
   {
     id: 2,
@@ -13,8 +13,7 @@ export const extraSkillsEnglish = [
     id: 3,
     label: 'Jira/Trello',
     value: {
-      skill:
-        'ability to collaborate effectively using tools like Jira and Trello',
+      skill: 'ability to work effectively using tools like Jira and Trello',
     },
   },
   {
@@ -42,8 +41,7 @@ export const extraSkillsEnglish = [
     id: 7,
     label: 'Git',
     value: {
-      skill:
-        'experience in using Git system both on individual and team projects',
+      skill: 'experience in using Git on commercial team projects',
     },
   },
 
@@ -51,8 +49,7 @@ export const extraSkillsEnglish = [
     id: 8,
     label: 'Webpack/Gulp',
     value: {
-      skill:
-        'understanding and experience in building projects with bundlers like Webpack and Gulp',
+      skill: 'familiarity with bundlers like Webpack and Gulp',
     },
   },
 ];
@@ -77,7 +74,7 @@ export const extraSkillsUkrainian = [
     value: {
       myWord: 'моя ',
       skill:
-        'здатність ефективно співпрацювати за допомогою інструментів, таких як Jira та Trello,',
+        'здатність ефективно працювати за допомогою інструментів Jira та Trello,',
     },
   },
   {
@@ -107,8 +104,7 @@ export const extraSkillsUkrainian = [
     label: 'Git',
     value: {
       myWord: 'мій ',
-      skill:
-        'досвід користування системою Git як в індивідуальних, так і в командних проектах',
+      skill: 'досвід користування системою Git на комерційних проектах',
     },
   },
 
@@ -116,9 +112,8 @@ export const extraSkillsUkrainian = [
     id: 8,
     label: 'Webpack/Gulp',
     value: {
-      myWord: 'моє ',
-      skill:
-        'розуміння роботи й досвід збірки проектів за допомогою бандлерів типу Webpack і Gulp',
+      myWord: 'моя ',
+      skill: 'обізнаність у бандлерах типу Webpack і Gulp',
     },
   },
 ];

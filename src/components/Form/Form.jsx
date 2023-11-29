@@ -1,21 +1,37 @@
 import css from './Form.module.css';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { englishData, ukrainianData } from '../../sources/templateData';
 import {
   extraSkillsEnglish,
   extraSkillsUkrainian,
 } from '../../sources/extraSkills';
+import fetchReasons from '../../db-fucntions/fetchReasons';
+import deleteReason from '../../db-fucntions/deleteReason';
+import DeleteBtn from '../DeleteBtn/DeleteBtn';
 
-const Form = ({ processFormData }) => {
+const Form = ({ userAuth, processFormData }) => {
   const [language, setLanguage] = useState('english');
   const [list, setList] = useState(englishData);
   const [skillList, setSkillList] = useState(extraSkillsEnglish);
+  const [reasons, setReasons] = useState([]);
   const formRef = useRef(null);
+
+  useEffect(() => {
+    if (userAuth) {
+      const collectionName = language === 'english' ? 'reasonsEn' : 'reasonsUk';
+      fetchReasons(userAuth, collectionName).then(res => setReasons(res));
+    }
+  }, [userAuth, language]);
 
   const handleLanguageChange = event => {
     setLanguage(event.target.value);
     setList(getList(event.target.value));
     setSkillList(getSkillList(event.target.value));
+  };
+
+  const removeReason = id => {
+    const collectionName = language === 'english' ? 'reasonsEn' : 'reasonsUk';
+    deleteReason(userAuth, collectionName, id);
   };
 
   const handleSubmit = event => {
@@ -31,7 +47,7 @@ const Form = ({ processFormData }) => {
       }
       arr.push([name, newVal]);
     });
-    console.log(arr);
+    // console.log(arr);
 
     const data = {};
 
@@ -83,7 +99,7 @@ const Form = ({ processFormData }) => {
     start,
     person,
     desiredPosition,
-    reason,
+    stateReason,
   } = labels;
 
   const {
@@ -264,8 +280,21 @@ const Form = ({ processFormData }) => {
 
       <div className={css.form__reasonbox}>
         <h3>{enterReasons}</h3>
+        <div className={css.form__reasonlist}>
+          {reasons.map(reason => (
+            <label key={reason.id} className={css.form__reasonlabel}>
+              <DeleteBtn onClick={() => removeReason(reason.id)} />
+              {reason.reason}
+              <input
+                type="checkbox"
+                name="checkReasons"
+                value={reason.reason}
+              />
+            </label>
+          ))}
+        </div>
         <label>
-          {reason}
+          {stateReason}
           <textarea className={css.form__reasons} name="reasons" />
         </label>{' '}
       </div>

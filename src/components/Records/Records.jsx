@@ -1,11 +1,12 @@
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
-import { auth, db } from '../../firebase';
+import { db } from '../../firebase';
 import deleteRecord from '../../db-fucntions/deleteRecord';
 import updateRecord from '../../db-fucntions/updateRecord';
 import { useState, useEffect } from 'react';
 import css from './Records.module.css';
 import progressStages from '../../sources/progressStages';
 import sortRecordsByCategory from '../../services/sortRecordsByCategory';
+import DeleteBtn from '../DeleteBtn/DeleteBtn';
 
 const Records = ({ userAuth }) => {
   const [category, setCategory] = useState('date');
@@ -133,19 +134,13 @@ const Records = ({ userAuth }) => {
                     <a
                       href={vacancyUrl}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow"
                     >
                       link
                     </a>
                   </td>
                   <td>
-                    <button
-                      className={css.table__btn_delete}
-                      type="button"
-                      onClick={() => deleteRecord(userAuth, id)}
-                    >
-                      Delete
-                    </button>
+                    <DeleteBtn onClick={() => deleteRecord(userAuth, id)} />
                   </td>
                 </tr>
               );
